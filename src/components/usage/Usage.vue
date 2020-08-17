@@ -32,9 +32,17 @@
             </b-card-text>
 
             <hr />
-            <b-card-title>이용량/이용내역</b-card-title>
+            <b-card-title>이용량</b-card-title>
             <b-card-text>
-              <router-link to="/">이용량조회</router-link>
+              <router-link to="/usage">이용량조회</router-link>
+              <br />
+              <router-link to="/">번호변경</router-link>
+            </b-card-text>
+
+            <hr />
+            <b-card-title>요금제</b-card-title>
+            <b-card-text>
+              <router-link to="/changepay">요금제변경</router-link>
               <br />
               <router-link to="/">번호변경</router-link>
             </b-card-text>

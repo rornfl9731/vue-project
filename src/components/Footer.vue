@@ -5,10 +5,10 @@
 <hr>
       <div class="container" >
         <p class="float-right">
-          <a href="#">Back to top</a>
+          <a href="#">top</a>
         </p>
-        <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+        <p>만드는중</p>
+        <p>아직 안만듬 <a href="../../">Visit the homepage</a> 귀찮음 <a href="../../getting-started/">고고고</a>.</p>
       </div>
     </footer>
 </div>

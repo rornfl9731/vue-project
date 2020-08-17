@@ -86,10 +86,11 @@
                <b-jumbotron>
                    <div style="textAlign:left;font-size:20px">변경 가능 요금제</div><br>
                    <b-card>
+
+            <b-table striped hover :items="it" :fields="fields"></b-table>
                        
-    <b-card-text style="display:flex;justify-content: space-between; "><span><b>청구월</b></span><span><b>납부하실 금액</b></span></b-card-text>
-    <hr>
-    <b-card-text style="display:flex;justify-content: space-between; "><span>2020년 08월</span><span>{{numberWithCommas(mo)}}</span></b-card-text>
+    
+    
     
   </b-card>
                </b-jumbotron>
@@ -120,7 +121,9 @@ export default {
     return {
       mo: "",
       phone: "",
-      chargeName : ""
+      chargeName : "",
+      fields: ['chargeName', 'chargePrice', 'chargeData','chargeVoice','chargeText'],
+      it : ""
       
 
 
@@ -138,6 +141,18 @@ export default {
         this.chargeName = res.data.chargeName;
         console.log(this.mo)
         this.phone = this.$store.state.memberPhone;
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+      axios
+      .get(
+        "http://localhost:8888/mypage/charge/info")
+      .then(res => {
+        console.log(res.data);
+        this.it = res.data
+        
       })
       .catch(err => {
         console.log(err);

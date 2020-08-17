@@ -10,8 +10,8 @@
           <b-nav-item-dropdown>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>요금조회</template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#">요금명세서</b-dropdown-item>
+            <b-dropdown-item href="#">상품별 요금</b-dropdown-item>
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown>
@@ -19,31 +19,33 @@
             <template v-slot:button-content>요금납부</template>
             <b-dropdown-item v-if="this.$store.state.loged == false" to="/login">즉시납부</b-dropdown-item>
             <b-dropdown-item v-if="this.$store.state.loged == true" to="/nowCharge">즉시납부</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#">납부 확인서</b-dropdown-item>
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>조회/변경</template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
-            <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+            <b-dropdown-item href="#">가입정보</b-dropdown-item>
+            <b-dropdown-item href="#">번호변경</b-dropdown-item>
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>이용량/이용내역</template>
-            <b-dropdown-item href="#">Profile</b-dropdown-item>
+            <b-dropdown-item v-if="this.$store.state.loged == false" to="/login">이용량조회</b-dropdown-item>
+            <b-dropdown-item v-if="this.$store.state.loged == true" to="/usage">이용량조회</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
 
           <b-nav-item-dropdown>
             <!-- Using 'button-content' slot -->
             <template v-slot:button-content>요금제</template>
-            <b-dropdown-item to="/changepay">요금제변경</b-dropdown-item>
+            <b-dropdown-item v-if="this.$store.state.loged == true" to="/changepay">요금제변경</b-dropdown-item>
+            <b-dropdown-item v-if="this.$store.state.loged == false" to="/login">요금제변경</b-dropdown-item>
             <b-dropdown-item href="#">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
 
-          <b-nav-item to="/board/free">자유게시판</b-nav-item>
+          <b-nav-item to="/board/free">연습용</b-nav-item>
         </b-navbar-nav>
 
         <b-navbar-nav class="ml-auto">
